@@ -71,6 +71,12 @@ public class AddCmdAdvancedTest extends CommandTest {
         AdvancedUtils.testAllPrivateFields(testCommand);
     }
 
+    @Test
+    public void testStatic(){
+        AddCmd cmd1 = new AddCmd("a.csv");
+        AddCmd cmd2 = new AddCmd("b.csv");
+        AdvancedUtils.testStatic(cmd1, cmd2);
+    }
 
     // ------------------------- test all examples -------------------------
 
