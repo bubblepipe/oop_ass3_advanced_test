@@ -8,16 +8,15 @@ public class BookEntryAdvancedTest extends BookEntryTest {
     private final int EXPECTED_CONSTRUCTORS_LENGTH = 1;
 
     // ---------------- check immutable ---------
+    @Test
     public void testImmutable() {
-
+        AdvancedUtils.testImmutable(testBook);
     }
 
     // ------------------------- check # of constructor -------------------------
     @Test
-    public void testNumOfConstructor() {
-        Class<?> bookEntryClass = BookEntry.class;
-        Constructor<?>[] constructors = bookEntryClass.getConstructors();
-        assertEquals(EXPECTED_CONSTRUCTORS_LENGTH, constructors.length);
+    public void testSingleConstructor() {
+        AdvancedUtils.testSingleConstructor(BookEntry.class);
     }
 
     // ------------------------- check null init pram -------------------------

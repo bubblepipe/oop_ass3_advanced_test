@@ -54,11 +54,28 @@ public class AddCmdAdvancedTest extends CommandTest {
         System.setErr(new PrintStream(err));
     }
 
+
+    // -------------------------- general tests -----------------------------
+    @Test
+    public void testSingleStringParamConstructor(){
+        AdvancedUtils.testSingleStringParamConstructor(AddCmd.class);
+    }
+
+    @Test
+    public void testSingleConstructor() {
+        AdvancedUtils.testSingleConstructor(AddCmd.class);
+    }
+
+    @Test
+    public void testAllPrivateFields() {
+        AdvancedUtils.testAllPrivateFields(testCommand);
+    }
+
+
     // ------------------------- test all examples -------------------------
 
     @Test
     public void testAddSucceedPrint_1 () {
-
         new AddCmd(TEST_IN_1).execute(testLibrary);
         assertEquals(TEST_EXPECTED_OUT_1, format(out.toString()));
         assertEquals(EMPTY_FIELD, format(err.toString()));

@@ -1,17 +1,17 @@
  
 import org.junit.Test;
 
-public class SearchCmdAdvancedTest extends SearchCmdTest {
+public class GroupCmdAdvancedTest extends GroupCmdTest {
     
     // -------------------------- general tests -----------------------------
     @Test
     public void testSingleStringParamConstructor(){
-        AdvancedUtils.testSingleStringParamConstructor(SearchCmd.class);
+        AdvancedUtils.testSingleStringParamConstructor(GroupCmd.class);
     }
 
     @Test
     public void testSingleConstructor() {
-        AdvancedUtils.testSingleConstructor(SearchCmd.class);
+        AdvancedUtils.testSingleConstructor(GroupCmd.class);
     }
 
     @Test

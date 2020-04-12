@@ -1,26 +1,44 @@
 import org.junit.Test;
 
-public class ListCmdAdvancedTest extends ListCmdTest{
+public class ListCmdAdvancedTest extends ListCmdTest {
+    
+    // -------------------------- general tests -----------------------------
+    @Test
+    public void testSingleStringParamConstructor(){
+        AdvancedUtils.testSingleStringParamConstructor(ListCmd.class);
+    }
+
+    @Test
+    public void testSingleConstructor() {
+        AdvancedUtils.testSingleConstructor(ListCmd.class);
+    }
+
+    @Test
+    public void testAllPrivateFields() {
+        AdvancedUtils.testAllPrivateFields(testCommand);
+    }
+
+    // -------------------------- specified tests ------------------------------------- 
 
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidType(){
+    public void testInvalidType() {
         new ListCmd("x").execute(testLibrary);
-    } 
+    }
 
     @Test
-    public void testBlankType(){
+    public void testBlankType() {
         new ListCmd("").execute(testLibrary);
-    } 
+    }
 
     @Test
-    public void testShortType(){
+    public void testShortType() {
         new ListCmd(SHORT_ARGUMENT).execute(testLibrary);
-    } 
+    }
 
     @Test
-    public void testLongype(){
+    public void testLongype() {
         new ListCmd(LONG_ARGUMENT).execute(testLibrary);
-    } 
+    }
 
     @Test
     public void testEmptyLib() {
