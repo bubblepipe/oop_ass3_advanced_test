@@ -18,6 +18,13 @@ public class ListCmdAdvancedTest extends ListCmdTest {
         AdvancedUtils.testAllPrivateFields(testCommand);
     }
 
+    @Test
+    public void testStatic(){
+        ListCmd cmd1 = new ListCmd("SHORT");
+        ListCmd cmd2 = new ListCmd("LONG");
+        AdvancedUtils.testStatic(cmd1, cmd2);
+    }
+
     // -------------------------- specified tests ------------------------------------- 
 
     @Test(expected = IllegalArgumentException.class)

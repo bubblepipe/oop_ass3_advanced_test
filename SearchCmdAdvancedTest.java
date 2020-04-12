@@ -19,5 +19,11 @@ public class SearchCmdAdvancedTest extends SearchCmdTest {
         AdvancedUtils.testAllPrivateFields(testCommand);
     }
 
+    @Test
+    public void testStatic(){
+        SearchCmd cmd1 = new SearchCmd("x");
+        SearchCmd cmd2 = new SearchCmd("xxx");
+        AdvancedUtils.testStatic(cmd1, cmd2);
+    }
     // -------------------------- specified tests ------------------------------------- 
 }    

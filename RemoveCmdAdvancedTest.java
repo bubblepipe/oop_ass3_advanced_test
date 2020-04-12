@@ -24,5 +24,11 @@ public class RemoveCmdAdvancedTest extends RemoveCmdTest {
         AdvancedUtils.testAllPrivateFields(testCommand);
     }
 
+    @Test
+    public void testStatic(){
+        RemoveCmd cmd1 = new RemoveCmd("TITLE x");
+        RemoveCmd cmd2 = new RemoveCmd("AUTHOR xx");
+        AdvancedUtils.testStatic(cmd1, cmd2);
+    }
     // -------------------------- specified tests ------------------------------------- 
 }    

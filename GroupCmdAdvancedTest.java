@@ -19,5 +19,11 @@ public class GroupCmdAdvancedTest extends GroupCmdTest {
         AdvancedUtils.testAllPrivateFields(testCommand);
     }
 
+    @Test
+    public void testStatic(){
+        GroupCmd cmd1 = new GroupCmd("TITLE");
+        GroupCmd cmd2 = new GroupCmd("AUTHOR");
+        AdvancedUtils.testStatic(cmd1, cmd2);
+    }
     // -------------------------- specified tests ------------------------------------- 
 }    
